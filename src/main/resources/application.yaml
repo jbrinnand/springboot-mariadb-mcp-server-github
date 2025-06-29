@@ -24,7 +24,7 @@ spring:
     driverClassName: org.mariadb.jdbc.Driver
     defer-datasource-initialization: true
 
-logging:                                    # Fixed logging structure
+logging:                                    # Fixed the logging structure
   level:
     com.zaxxer.hikari.HikariConfig: DEBUG
     org.springframework: INFO
@@ -32,5 +32,5 @@ logging:                                    # Fixed logging structure
     org.hibernate.SQL: DEBUG
 
 
-server:                                     # Fixed server configuration structure
+server:                                     # Fixed the server configuration structure
   port: 8082
