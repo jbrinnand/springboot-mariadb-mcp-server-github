@@ -1,0 +1,36 @@
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.MariaDBDialect
+    generate-ddl: true
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+      properties:
+        hibernate:
+          format_sql: true
+    defer-datasource-initialization: true
+
+  sql:
+    init:
+      mode: always           # Enable SQL initialization
+      data-locations: classpath:data.sql
+      platform: mariadb
+      continue-on-error: true
+
+  datasource:
+    url: jdbc:mariadb://192.168.1.13:3306/mytestdb?createDatabaseIfNotExist=true
+    username: root
+    password: beowulf12
+    driverClassName: org.mariadb.jdbc.Driver
+    defer-datasource-initialization: true
+
+logging:                                    # Fixed the logging structure
+  level:
+    com.zaxxer.hikari.HikariConfig: DEBUG
+    org.springframework: INFO
+    org.hibernate.type.descriptor.sql: TRACE
+    org.hibernate.SQL: DEBUG
+
+
+server:                                     # Fixed the server configuration structure
+  port: 8082
