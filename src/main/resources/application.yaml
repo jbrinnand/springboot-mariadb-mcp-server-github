@@ -15,7 +15,7 @@ spring:
       mode: always           # Enable SQL initialization
       data-locations: classpath:data.sql
       platform: mariadb
-      continue-on-error: false
+      continue-on-error: true
 
   datasource:
     url: jdbc:mariadb://192.168.1.13:3306/mytestdb?createDatabaseIfNotExist=true
