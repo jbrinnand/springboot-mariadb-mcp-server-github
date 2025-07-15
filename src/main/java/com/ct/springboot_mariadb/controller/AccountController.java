@@ -4,10 +4,7 @@ import com.ct.springboot_mariadb.model.Account;
 import com.ct.springboot_mariadb.service.AccountService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -39,5 +36,13 @@ public class AccountController {
         return accountService.getAccountByName(name)
                 .map(ResponseEntity::ok)
                 .orElse(ResponseEntity.notFound().build());
+    }
+
+    @GetMapping("/search")
+    public ResponseEntity<List<Account>> searchAccounts(@RequestParam String name) {
+        List<Account> accounts = accountService.searchAccountsByPartialName(name);
+        return accounts.isEmpty()
+                ? ResponseEntity.notFound().build()
+                : ResponseEntity.ok(accounts);
     }
 }

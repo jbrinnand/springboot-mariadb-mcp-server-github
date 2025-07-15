@@ -28,4 +28,8 @@ public class AccountService {
     public Optional<Account> getAccountByName(String name) {
         return accountRepository.findByName(name);
     }
+
+    public List<Account> searchAccountsByPartialName(String namePattern) {
+        return accountRepository.findByNameContainingIgnoreCase(namePattern);
+    }
 }
