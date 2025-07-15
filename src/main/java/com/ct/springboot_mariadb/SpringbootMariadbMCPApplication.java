@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SpringbootMariadbApplication {
+public class SpringbootMariadbMCPApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(SpringbootMariadbApplication.class, args);
+		SpringApplication.run(SpringbootMariadbMCPApplication.class, args);
 	}
 
 }

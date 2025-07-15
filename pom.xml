@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from the repository -->
 	</parent>
 	<groupId>com.ct</groupId>
-	<artifactId>springboot-mariadb</artifactId>
+	<artifactId>springboot-mariadb-mcp-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>springboot-mariadb</name>
-	<description>Demo project for Spring Boot and mariadb</description>
+	<name>springboot-mariadb-mcp-server</name>
+	<description>Demo project for Spring Boot, mariadb as an MCP server</description>
 	<url/>
 	<licenses>
 		<license/>

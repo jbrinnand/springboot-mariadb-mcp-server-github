@@ -33,4 +33,4 @@ logging:                                    # Fixed the logging structure
 
 
 server:                                     # Fixed the server configuration structure
-  port: 8082
+  port: 8880
