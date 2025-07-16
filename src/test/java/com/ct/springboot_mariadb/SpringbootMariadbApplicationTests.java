@@ -1,27 +1,30 @@
+//package com.ct.springboot_mariadb;
+//
 //import io.modelcontextprotocol.client.McpClient;
+//import io.modelcontextprotocol.client.McpSyncClient;
+//import io.modelcontextprotocol.client.transport.HttpClientSseClientTransport;
 //import io.modelcontextprotocol.spec.McpSchema;
 //import lombok.extern.slf4j.Slf4j;
 //import org.junit.jupiter.api.Test;
 //import org.springframework.boot.test.context.SpringBootTest;
 //
 //import java.time.Duration;
-//import java.util.Map;
 //
 //@Slf4j
 //@SpringBootTest
-//public class SpringbootMCPApplicationTest {
+//public class SpringbootMariadbApplicationTests {
 //
 //    @Test
 //    void testRemoteClient() {
-//        // Create a remote transport pointing to your MCP server
-//        var remoteTransport = new HttpClientTransport("http://localhost:8080/mcp");
+//        log.info("Test Remote Client");
+//        var transport = new HttpClientSseClientTransport("http://localhost:8080/mcp");
 //
 //        // Create a sync client with remote configuration
-//        var client = McpClient.sync(remoteTransport)
+//        McpSyncClient client = McpClient.sync(transport)
 //                .requestTimeout(Duration.ofSeconds(30))
 //                .capabilities(McpSchema.ClientCapabilities.builder()
-//                        .roots(true)      // Enable roots capability
-//                        .sampling()       // Enable sampling capability
+//                        .roots(true)
+//                        .sampling()
 //                        .build())
 //                .sampling(request ->
 //                        McpSchema.CreateMessageResult.builder()
@@ -38,14 +41,8 @@
 //            final McpSchema.ListToolsResult listToolsResult = client.listTools();
 //            log.info("Available tools: {}", listToolsResult.tools());
 //            listToolsResult.tools().forEach(tool ->
-//                log.info("Tool: {}  Description: {}", tool.name(), tool.description())
+//                    log.info("Tool: {}  Description: {}", tool.name(), tool.description())
 //            );
-//
-//            // Test invoking a tool
-//            var toolParams = Map.of("name", "test");
-//            var toolResult = client.invokeTool("searchAccountsByPartialName", toolParams);
-//            log.info("Tool result: {}", toolResult);
-//
 //        } finally {
 //            client.closeGracefully();
 //        }

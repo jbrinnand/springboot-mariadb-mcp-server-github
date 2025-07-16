@@ -23,7 +23,10 @@ spring:
     password: beowulf12
     driverClassName: org.mariadb.jdbc.Driver
     defer-datasource-initialization: true
-
+  ai:
+    mcp:
+      server:
+        stdio: true
 logging:                                    # Fixed the logging structure
   level:
     com.zaxxer.hikari.HikariConfig: DEBUG
