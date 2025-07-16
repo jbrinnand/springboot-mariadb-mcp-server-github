@@ -23,6 +23,18 @@ spring:
     password: beowulf12
     driverClassName: org.mariadb.jdbc.Driver
     defer-datasource-initialization: true
+  ai:
+    mcp:
+      server:
+        stdio: false
+        enabled: true
+        capabilities:
+          tool: true
+          resource: false
+          prompt: false
+          completion: false
+        sse-endpoint: /sse
+        sse-message-endpoint: /mcp/message
 
 logging:                                    # Fixed the logging structure
   level:
@@ -30,7 +42,7 @@ logging:                                    # Fixed the logging structure
     org.springframework: INFO
     org.hibernate.type.descriptor.sql: TRACE
     org.hibernate.SQL: DEBUG
-
+    org.springframework.ai.mcp: INFO
 
 server:                                     # Fixed the server configuration structure
-  port: 8880
+  port: 8890
