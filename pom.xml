@@ -94,13 +94,9 @@
             <artifactId>mariadb-java-client</artifactId>
         </dependency>
         <dependency>
-            <groupId>io.modelcontextprotocol.sdk</groupId>
-            <artifactId>mcp-spring-webmvc</artifactId>
-            <version>0.7.0</version>
-<!--            <scope>test</scope>-->
+            <groupId>org.springframework.ai</groupId>
+            <artifactId>spring-ai-starter-mcp-server-webmvc</artifactId>
         </dependency>
-
-
     </dependencies>
 
     <dependencyManagement>

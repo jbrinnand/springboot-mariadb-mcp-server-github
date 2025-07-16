@@ -26,14 +26,23 @@ spring:
   ai:
     mcp:
       server:
-        stdio: true
+        stdio: false
+        enabled: true
+        capabilities:
+          tool: true
+          resource: false
+          prompt: false
+          completion: false
+        sse-endpoint: /sse
+        sse-message-endpoint: /mcp/message
+
 logging:                                    # Fixed the logging structure
   level:
     com.zaxxer.hikari.HikariConfig: DEBUG
     org.springframework: INFO
     org.hibernate.type.descriptor.sql: TRACE
     org.hibernate.SQL: DEBUG
-
+    org.springframework.ai.mcp: INFO
 
 server:                                     # Fixed the server configuration structure
-  port: 8880
+  port: 8890
