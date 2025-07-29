@@ -12,7 +12,9 @@ WORKDIR /app
 RUN useradd -r -u 1001 -g root mcp-user
 
 # Copy the jar from builder stage
-COPY target/*.jar app.jar
+ARG TARGET_DIR
+COPY $TARGET_DIR/*.jar app.jar
+COPY ./target/*.jar app.jar
 RUN chown mcp-user:root app.jar
 
 # Use non-root user

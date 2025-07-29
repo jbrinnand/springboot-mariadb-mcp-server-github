@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from the repository -->
     </parent>
     <groupId>com.ct</groupId>
-    <artifactId>springboot-mariadb-mcp-server</artifactId>
+    <artifactId>springboot-mariadb-mcp-server-github</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>springboot-mariadb-mcp-server</name>
     <description>Demo project for Spring Boot, mariadb as an MCP server</description>
